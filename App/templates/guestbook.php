@@ -39,6 +39,7 @@
             <a class="blog-nav-item" href="/about.php">Обо мне</a>
             <a class="blog-nav-item" href="/gallery.php">Фотогалерея</a>
             <a class="blog-nav-item active" href="/guestbook.php">Гостевая книга</a>
+            || <a class="blog-nav-item" href="/admin/index.php">Админ-панель</a>
         </nav>
     </div>
 </div>
@@ -54,14 +55,15 @@
 
         <div class="col-sm-8 blog-main">
 
+<?php foreach ($records as $record): ?>
 
+            <li><?php echo $record->getText() ?></li>
 
+<?php endforeach; ?>
 
-
-            <li></li>
             </ul>
             <hr>
-            <form action="/lection7/gb/index.php" method="post">
+            <form action="/guestbook.php" method="post">
                 <input type="text" name="record">
                 <input type="submit" value="добавить">
             </form>

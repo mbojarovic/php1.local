@@ -39,7 +39,7 @@
             <a class="blog-nav-item" href="/about.php">Обо мне</a>
             <a class="blog-nav-item" href="/gallery.php">Фотогалерея</a>
             <a class="blog-nav-item" href="/guestbook.php">Гостевая книга</a>
-            || <a class="blog-nav-item" href="/admin/index.php">Админ-панель</a>
+            ||<a class="blog-nav-item" href="/admin/index.php">Админ-панель</a>
         </nav>
     </div>
 </div>

@@ -5,33 +5,24 @@ use App\Db;
 
 class GuestBook
 {
+    protected $data;
     protected $records = [];
-
-    public function __construct()
-    {
-        $db = new Db();
-        $this->records = $db->query('SELECT * FROM guestbook');
-        //var_dump($this->records);
-    }
 
     public function getAllRecords()
     {
-        var_dump($this->records);
-        return $this->records;
-    }
+        $db = new Db();
+        $this->data = $db->query('SELECT id, messages FROM guestbook ORDER BY id DESC');
 
-/*    public function append(GuestBookRecord $record)
-    {
-            $this->records[] = $record;
-    }
-
-    public function save()
-    {
-        $arr = [];
-        foreach ($this->records as $value) {
-            $arr[] = $value->getText();
+        foreach ($this->data as $text) {
+            $this->records[] = new GuestBookRecord($text->id, $text->messages);
         }
-        $str = implode("\n", $arr);
-        file_put_contents($this->path, $str) ;
-    }*/
+        return $this->records;
+
+    }
+    public function addOneRecord($record)
+    {
+        $db = new Db();
+        $this->data = $db->query('INSERT INTO guestbook (messages) VALUES (:record)',
+            [':record' => $record]);
+    }
 }
