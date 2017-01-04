@@ -17,7 +17,6 @@ class About
         foreach ($this->data as $text) {
 
             $this->about[] = new AboutText($text->aboutTitle, $text->aboutText);
-            //var_dump($aboutT);
         }
         return $this->about;
     }
@@ -27,13 +26,6 @@ class About
         $db = new Db();
         return $this->data = $db->query('update about SET aboutTitle=:aboutTitle, aboutText=:aboutText',
         [':aboutTitle' => $aboutTitle, ':aboutText' => $aboutText]);
-
-
-/*        $aboutT = [];
-        foreach ($this->data as $record) {
-            $aboutT[] = new aboutMeText($record);
-        }*/
-        //return $aboutT;
     }
 
 }
