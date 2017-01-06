@@ -14,4 +14,4 @@ if (isset($_GET['id'])) {
 }
 echo $id;
 
-$view->assign('gbdelete', $guestbook->delOneRecord($id));
+$guestbook->delOneRecord($id);

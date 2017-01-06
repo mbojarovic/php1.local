@@ -36,10 +36,10 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="/about.php">Обо мне</a>
-            <a class="blog-nav-item" href="/gallery.php">Фотогалерея</a>
+            <a class="blog-nav-item" href="/about.php">Обо мне</a>
+            <a class="blog-nav-item active" href="/gallery.php">Фотогалерея</a>
             <a class="blog-nav-item" href="/guestbook.php">Гостевая книга</a>
-            || <a class="blog-nav-item" href="/admin/index.php">Админ-панель</a>
+            ||<a class="blog-nav-item" href="/admin/index.php">Админ-панель</a>
         </nav>
     </div>
 </div>
@@ -47,37 +47,34 @@
 <div class="container">
 
     <div class="blog-header">
-        <h1 class="blog-title">Обо мне</h1>
-        <p class="lead blog-description"><?php echo $about[0]->getTitle() ?></p>
+        <h1 class="blog-title">фотогалерея</h1>
+        <p class="lead blog-description">Картинки связаны с PHP.</p>
     </div>
 
     <div class="row">
+            <div class="col-xs-6 col-md-9">
+                <div class="thumbnail">
+                    <img src="/uploads/<?php echo $image[0]->images; ?>">
+            </div>
+    </div>
 
-        <div class="col-sm-8 blog-main">
+</div><!-- /.row -->
 
-            <div class="blog-post">
-                <p><?php echo $about[0]->getText() ?></p>
-            </div><!-- /.blog-post -->
+</div><!-- /.container -->
 
-        </div><!-- /.row -->
+<footer class="blog-footer">
 
-    </div><!-- /.container -->
-
-    <footer class="blog-footer">
-
-        <p>
-            <a href="#">Back to top</a>
-        </p>
-    </footer>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/App/templates/assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/App/templates/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/App/templates/assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
-</html>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/App/templates/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="/App/templates/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/App/templates/assets/js/ie10-viewport-bug-workaround.js"></script>

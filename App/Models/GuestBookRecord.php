@@ -4,6 +4,7 @@ namespace App\Models;
 
 class GuestBookRecord
 {
+    protected $id;
     protected $text;
 
     function __construct($id, $text)

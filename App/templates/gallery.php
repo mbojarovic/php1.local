@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/App/templates/favicon/favicon.ico">
 
-    <title>фотогалерея</title>
+    <title>Обо мне</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/App/templates/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <a class="blog-nav-item" href="/about.php">Обо мне</a>
             <a class="blog-nav-item active" href="/gallery.php">Фотогалерея</a>
             <a class="blog-nav-item" href="/guestbook.php">Гостевая книга</a>
-            || <a class="blog-nav-item" href="/admin/index.php">Админ-панель</a>
+            ||<a class="blog-nav-item" href="/admin/index.php">Админ-панель</a>
         </nav>
     </div>
 </div>
@@ -53,39 +53,35 @@
 
     <div class="row">
 
-        <div class="col-sm-8 blog-main">
+        <?php foreach ($images as $image): ?>
 
-           <?php foreach ($this->data['news'] as $article): ?>
+            <div class="col-xs-6 col-md-3">
+                <a href="/image.php?id=<?php echo $image->getImageId(); ?>" class="thumbnail">
+                    <img style="width: 200px; height: 200px" src="/uploads/<?php echo $image->getImage();?>" alt="">
+                </a>
+            </div>
 
-                <div class="blog-post">
-                    <h2 class="blog-post-title"><a href="/lesson8/3/article.php?id=<?php echo $article->id ?>">
-                            <?php echo $article->newsTitle; ?></a></h2>
-                    <p class="blog-post-meta"> by <?php echo $article->newsAuthor ?>
-                        <a href="#"></a></p>
-                    <p><?php echo mb_substr($article->newsText, 0 , 300); ?>...</p>
-                </div><!-- /.blog-post -->
+        <?php endforeach; ?>
 
-            <?php endforeach; ?>
+    </div>
 
-        </div><!-- /.row -->
+</div><!-- /.row -->
 
-    </div><!-- /.container -->
+</div><!-- /.container -->
 
-    <footer class="blog-footer">
+<footer class="blog-footer">
 
-        <p>
-            <a href="#">Back to top</a>
-        </p>
-    </footer>
+    <p>
+        <a href="#">Back to top</a>
+    </p>
+</footer>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/App/templates/assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/App/templates/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/App/templates/assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
-</html>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/App/templates/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="/App/templates/dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/App/templates/assets/js/ie10-viewport-bug-workaround.js"></script>

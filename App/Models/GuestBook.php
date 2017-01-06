@@ -21,7 +21,7 @@ class GuestBook
     }
     public function addOneRecord($record)
     {
-        $db = new Db();
+   $db = new Db();
         $this->data = $db->query('INSERT INTO guestbook (messages) VALUES (:record)',
             [':record' => $record]);
     }

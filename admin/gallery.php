@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Marek
- * Date: 1/6/2017
- * Time: 11:41 AM
- */
+
+require __DIR__ . '/../autoload.php';
+
+$gallery = new \App\Models\Gallery;
+
+$view = new \App\View();
+$view->assign('images', $gallery->getAllImages());
+$view->display(__DIR__ . '/../App/templates/admin/gallery.php');

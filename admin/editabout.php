@@ -15,5 +15,7 @@ if (isset($_POST['aboutTitle']) && isset($_POST['aboutText'])) {
 }
 
 $view->assign('getabout', $about->getAbout());
-$view->assign('editabout', $about->editAbout($aboutTitle, $aboutText));
+
+$about->editAbout($aboutTitle, $aboutText);
+
 $view->display(__DIR__ . '/../App/templates/admin/editabout.php');
