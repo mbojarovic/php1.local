@@ -3,7 +3,6 @@
 require __DIR__ . '/../autoload.php';
 
 $about = new \App\Models\About;
-//$abouttext = new \App\Models\AboutText($title, $text);
 $view = new \App\View();
 
 if (isset($_POST['aboutTitle']) && isset($_POST['aboutText'])) {

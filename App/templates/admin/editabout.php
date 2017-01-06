@@ -37,9 +37,9 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="/admin/index.php">Обо мне</a>
+            <a class="blog-nav-item" href="/admin/index.php">Обо мне</a>
             <a class="blog-nav-item" href="/admin/gallery.php">Фотогалерея</a>
-            <a class="blog-nav-item" href="/admin/guestbook.php">Гостевая книга</a>
+            <a class="blog-nav-item active" href="/admin/guestbook.php">Гостевая книга</a>
             || <a class="blog-nav-item" href="#">Админ-панель</a>
             <a class="blog-nav-item" href="/index.php">Вернуться на главную</a>
         </nav>

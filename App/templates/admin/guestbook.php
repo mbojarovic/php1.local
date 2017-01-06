@@ -37,9 +37,9 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
-            <a class="blog-nav-item active" href="/admin/about.php">Обо мне</a>
+            <a class="blog-nav-item" href="/admin/about.php">Обо мне</a>
             <a class="blog-nav-item" href="/admin/gallery.php">Фотогалерея</a>
-            <a class="blog-nav-item" href="/admin/guestbook.php">Гостевая книга</a>
+            <a class="blog-nav-item active" href="/admin/guestbook.php">Гостевая книга</a>
             || <a class="blog-nav-item" href="#">Админ-панель</a>
             <a class="blog-nav-item" href="/index.php">Вернуться на главную</a>
         </nav>
@@ -50,31 +50,35 @@
 
     <div class="col-md-10 col-md-offset-1">
 
-            <div class="panel-body">
-                <table class="table table-striped table-bordered table-list">
-                    <thead>
-                    <tr>
-                        <th><em class="fa fa-cog"></em></th>
-                        <th>Title</th>
-                        <th>Text</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td align="center">
-                            <a class="btn btn-danger" href="/admin/editabout.php">EDIT<em class="fa fa-trash"></em></a>
-                        </td>
-                        <td class="hidden-xs"><?php echo $this->data['getabout'][0]->getTitle() ?></td>
-                        <td><?php echo $this->data['getabout'][0]->getText() ?></td>
-                    </tr>
-                    </tbody>
-                </table>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-list">
+                <thead>
+                <tr>
+                    <th><em class="fa fa-cog"></em></th>
+                    <th>Id</th>
+                    <th>Text</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($getguestbook as $record): ?>
+                <tr>
 
-            </div>
+                    <?php //var_dump($getguestbook); ?>
+                    <td align="center">
+                        <a class="btn btn-danger" href="/admin/gbdelete.php?id=<?php echo $record->getId() ?>">DELETE<em class="fa fa-trash"></em></a>
+                    </td>
+                    <td class="hidden-xs"><?php echo $record->getId() ?></td>
+                    <td><?php echo $record->getText() ?></td>
+                </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
 
-        </div><!-- /.blog-post -->
+        </div>
 
-    </div><!-- /.row -->
+    </div><!-- /.blog-post -->
+
+</div><!-- /.row -->
 
 </div><!-- /.container -->
 

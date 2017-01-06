@@ -25,4 +25,11 @@ class GuestBook
         $this->data = $db->query('INSERT INTO guestbook (messages) VALUES (:record)',
             [':record' => $record]);
     }
+
+    public function delOneRecord($id)
+    {
+        $db = new Db();
+        $this->data = $db->query('DELETE FROM guestbook WHERE id=:id',
+        [':id' => $id]);
+    }
 }
