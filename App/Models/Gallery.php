@@ -26,14 +26,14 @@ class Gallery
         //return self::getAllImages()[$id -1];
 
         $db = new Db();
-        return $this->data = $db->query('SELECT * FROM gallery WHERE id=:id',
+        return $db->query('SELECT * FROM gallery WHERE id=:id',
             [':id' => $id]);
     }
 
     public function addOneImage($image)
     {
         $db = new Db();
-        $this->data = $db->query('INSERT INTO gallery (images) VALUES (:image)',
+        return $db->query('INSERT INTO gallery (images) VALUES (:image)',
             [':image' => $image]);
     }
 }

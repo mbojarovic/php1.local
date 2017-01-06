@@ -23,7 +23,7 @@ class About
     public function editAbout($aboutTitle, $aboutText)
     {
         $db = new Db();
-        $this->data = $db->query('UPDATE about SET aboutTitle=:aboutTitle, aboutText=:aboutText',
+        return $db->query('UPDATE about SET aboutTitle=:aboutTitle, aboutText=:aboutText',
         [':aboutTitle' => $aboutTitle, ':aboutText' => $aboutText]);
     }
 

@@ -22,14 +22,14 @@ class GuestBook
     public function addOneRecord($record)
     {
    $db = new Db();
-        $this->data = $db->query('INSERT INTO guestbook (messages) VALUES (:record)',
+        return $db->query('INSERT INTO guestbook (messages) VALUES (:record)',
             [':record' => $record]);
     }
 
     public function delOneRecord($id)
     {
         $db = new Db();
-        $this->data = $db->query('DELETE FROM guestbook WHERE id=:id',
+        return $db->query('DELETE FROM guestbook WHERE id=:id',
         [':id' => $id]);
     }
 }
