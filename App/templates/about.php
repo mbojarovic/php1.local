@@ -36,6 +36,7 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
+            <a class="blog-nav-item" href="/news.php">Новости</a>
             <a class="blog-nav-item active" href="/about.php">Обо мне</a>
             <a class="blog-nav-item" href="/gallery.php">Фотогалерея</a>
             <a class="blog-nav-item" href="/guestbook.php">Гостевая книга</a>
@@ -57,11 +58,12 @@
 
             <div class="blog-post">
                 <p><?php echo $about[0]->getText() ?></p>
-            </div><!-- /.blog-post -->
+            </div>
+        </div><!-- /.blog-sidebar -->
 
-        </div><!-- /.row -->
+    </div><!-- /.row -->
 
-    </div><!-- /.container -->
+</div><!-- /.container -->
 
     <footer class="blog-footer">
 

@@ -36,6 +36,7 @@
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
+            <a class="blog-nav-item" href="/news.php">Новости</a>
             <a class="blog-nav-item" href="/about.php">Обо мне</a>
             <a class="blog-nav-item active" href="/gallery.php">Фотогалерея</a>
             <a class="blog-nav-item" href="/guestbook.php">Гостевая книга</a>
