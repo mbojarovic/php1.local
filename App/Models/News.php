@@ -27,7 +27,7 @@ class News
     public function updateNews($id, $newsTitle, $newsText, $newsAuthor, $newsDate)
     {
         $db = new Db();
-        return $db->query('UPDATE news SET id=:id, newsTitle=:newsTitle, newsText=:newsText, newsAuthor=:newsAuthor, newsDate=:newsDate WHERE id=:id',
+        return $db->query('UPDATE news SET newsTitle=:newsTitle, newsText=:newsText, newsAuthor=:newsAuthor, newsDate=:newsDate WHERE id=:id',
             [':id' => $id,':newsTitle' => $newsTitle, ':newsText' => $newsText, ':newsAuthor' => $newsAuthor, ':newsDate' => $newsDate]);
     }
 
