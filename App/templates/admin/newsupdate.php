@@ -50,10 +50,8 @@
 <div class="container">
 <?php var_dump($getnews);?>
     <?php //var_dump($getnews[0]->newsTitle); ?>
-    <form method="post" action="/admin/newsupdate.php">
+    <form method="post" action="/admin/newsupdate.php?id=<?php echo $getnews[0]->id; ?>">
         <div class="form-group">
-            <label for="comment">Id:</label>
-            <textarea class="form-control" rows="2" id="comment" name="id"><?php echo $getnews[0]->id; ?></textarea>
 
             <label for="comment">Title:</label>
             <textarea class="form-control" rows="2" id="comment" name="newsTitle"><?php echo $getnews[0]->newsTitle; ?></textarea>

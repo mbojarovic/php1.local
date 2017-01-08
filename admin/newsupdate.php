@@ -14,9 +14,9 @@ if (isset($_GET['id'])) {
 
 $view->assign('getnews', $news->getOneNews($id));
 
-if (isset($_POST['id']) && isset($_POST['newsTitle']) && isset($_POST['newsText'])
+if (isset($_GET['id']) && isset($_POST['newsTitle']) && isset($_POST['newsText'])
     && isset($_POST['newsAuthor']) && isset($_POST['newsDate'])) {
-    $id  = $_POST['id'];
+    $id  = (int)$_GET['id'];
     $newsTitle  = $_POST['newsTitle'];
     $newsText  = $_POST['newsText'];
     $newsAuthor  = $_POST['newsAuthor'];
