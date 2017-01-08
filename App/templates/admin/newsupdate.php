@@ -38,7 +38,7 @@
     <div class="container">
         <nav class="blog-nav">
             <a class="blog-nav-item active" href="/admin/news.php">Новости</a>
-            <a class="blog-nav-item" href="/admin/about.php">Обо мне</a>
+            <a class="blog-nav-item" href="/admin/index.php">Обо мне</a>
             <a class="blog-nav-item" href="/admin/gallery.php">Фотогалерея</a>
             <a class="blog-nav-item" href="/admin/guestbook.php">Гостевая книга</a>
             || <a class="blog-nav-item" href="#">Админ-панель</a>
@@ -48,36 +48,32 @@
 </div>
 
 <div class="container">
+<?php var_dump($getnews);?>
+    <?php //var_dump($getnews[0]->newsTitle); ?>
+    <form method="post" action="/admin/newsupdate.php">
+        <div class="form-group">
+            <label for="comment">Id:</label>
+            <textarea class="form-control" rows="2" id="comment" name="id"><?php echo $getnews[0]->id; ?></textarea>
 
-    <div class="col-md-10 col-md-offset-1">
+            <label for="comment">Title:</label>
+            <textarea class="form-control" rows="2" id="comment" name="newsTitle"><?php echo $getnews[0]->newsTitle; ?></textarea>
 
-        <div class="panel-body">
-            <table class="table table-striped table-bordered table-list">
-                <thead>
-                <tr>
-                    <th><em class="fa fa-cog"></em></th>
-                    <th>Title</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($getnews as $record): ?>
-                    <tr>
+            <label for="comment">Text:</label>
+            <textarea class="form-control" rows="20" id="comment" name="newsText"><?php echo $getnews[0]->newsText; ?></textarea>
 
-                        <?php //var_dump($getguestbook); ?>
-                        <td align="center">
-                            <a class="btn btn-warning" href="/admin/newsupdate.php?id=<?php echo $record->getId() ?>">UPDATE<em class="fa fa-trash"></em></a>
-                            <a class="btn btn-danger" href="/admin/newsdelete.php?id=<?php echo $record->getId() ?>">DELETE<em class="fa fa-trash"></em></a>
-                        </td>
+            <label for="comment">Author:</label>
+            <textarea class="form-control" rows="1" id="comment" name="newsAuthor"><?php echo $getnews[0]->newsAuthor; ?></textarea>
 
-                        <td><?php echo $record->getTitle() ?></td>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
+            <label for="comment">Date:</label>
+            <textarea class="form-control" rows="1" id="comment" name="newsDate"><?php echo $getnews[0]->newsDate; ?></textarea>
 
+            <input type="submit" value="Изменить" class="btn">
         </div>
+    </form>
 
-    </div><!-- /.blog-post -->
+</div>
+
+</div><!-- /.blog-post -->
 
 </div><!-- /.row -->
 

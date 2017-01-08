@@ -19,9 +19,16 @@ class News
         return $this->records;
     }
 
-    public function getShortNews($text, $len = '300')
+    /*public function getShortNews($text, $len = '300')
     {
         return mb_substr($text, 0 , $len);
+    }*/
+
+    public function updateNews($id, $newsTitle, $newsText, $newsAuthor, $newsDate)
+    {
+        $db = new Db();
+        return $db->query('UPDATE news SET id=:id, newsTitle=:newsTitle, newsText=:newsText, newsAuthor=:newsAuthor, newsDate=:newsDate WHERE id=:id',
+            [':id' => $id,':newsTitle' => $newsTitle, ':newsText' => $newsText, ':newsAuthor' => $newsAuthor, ':newsDate' => $newsDate]);
     }
 
     public function getOneNews($id)
@@ -38,17 +45,10 @@ class News
             [':record' => $record]);
     }
 
-    public function editOneNews($id)
-    {
-        $db = new Db();
-        return $db->query('DELETE FROM news WHERE id=:id',
-            [':id' => $id]);
-    }
-
     public function delOneNews($id)
     {
         $db = new Db();
-        return $db->query('DELETE FROM guestbook WHERE id=:id',
+        return $db->query('DELETE FROM news WHERE id=:id',
             [':id' => $id]);
     }
 }

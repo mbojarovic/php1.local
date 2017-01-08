@@ -53,7 +53,7 @@
     </div>
 
     <div class="row">
-        <?php var_dump($records)?>
+        <?php //var_dump($records)?>
         <div class="col-sm-8 blog-main">
 
                 <div class="blog-post">
